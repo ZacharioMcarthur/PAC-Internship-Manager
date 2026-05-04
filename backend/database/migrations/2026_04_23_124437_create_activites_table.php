@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('activites', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->date('date');
+            $table->string('titre');
+            $table->text('description');
+            $table->string('statut')->default('soumise');
+            $table->foreignId('validated_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->timestamp('validated_at')->nullable();
             $table->timestamps();
         });
     }

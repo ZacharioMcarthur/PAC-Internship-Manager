@@ -1,16 +1,20 @@
-# mobile
+# PAC Mobile (Flutter)
 
-A new Flutter project.
+## Rôle
+Application stagiaire/encadrement pour:
+- se connecter à l'API Laravel
+- faire le pointage arrivée/départ avec GPS
+- saisir les activités journalières
+- consulter l'historique
 
-## Getting Started
+## Configuration
+1. `flutter pub get`
+2. Vérifier la base URL API dans `lib/config/app_config.dart`
+3. `flutter run`
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Structure
+- `lib/main.dart`: bootstrap + routage initial (session/token)
+- `lib/screens/login_screen.dart`: écran de connexion
+- `lib/screens/home_screen.dart`: écrans présence/activités
+- `lib/services/*`: appels API + session
+- `lib/models/*`: objets métier
